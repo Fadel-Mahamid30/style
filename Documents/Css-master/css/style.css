@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #222;
+}
+
+#navbar{
+    position: relative;
+    width: 400px;
+    height: 60px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+#navbar ul{
+    position: relative;
+    width: 350px;
+    height: 60px;
+    display: flex;
+}
+
+#navbar ul li{
+    position: relative;
+    width: 70px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+#navbar ul li a{
+    position: relative;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#navbar ul li a .icon{
+    font-size: 1.5rem;
+    color: #222;
+    display: block;
+    position: relative;
+    line-height: 65px;
+    transition: 0.5s;
+}
+
+#navbar ul li.active a .icon{
+    transform: translateY(-30px);
+    color: #2196f3;
+    z-index: 1000;
+}
+
+#navbar ul li a .text{
+    position: absolute;
+    color: #fff;
+    border-radius: 12px;
+    letter-spacing: 0.05em;
+    padding: 2px 7px;
+    transform: translateY(15px);
+    z-index: 100000;
+    font-size: 0.75em;
+    background: #2196f3;
+    opacity: 0;
+    transition: 0.5s;
+
+}
+
+#navbar ul li.active a .text{
+    transform: translateY(-4px);
+    opacity: 1;
+}
+
+.indicator{
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    top: -35px;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.indicator::before{
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: -28px;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    box-shadow: 15px 18px #fff;
+    border-radius: 50%;
+}
+
+.indicator::after{
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: -28px;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    box-shadow: -15px 18px #fff;
+    border-radius: 50%;
+}
+
+#navbar ul li:nth-child(1).active ~ .indicator{
+    transform: translateX(calc(70px * 0));
+}
+
+#navbar ul li:nth-child(2).active ~ .indicator{
+    transform: translateX(calc(70px * 1));
+}
+
+#navbar ul li:nth-child(3).active ~ .indicator{
+    transform: translateX(calc(70px * 2));
+}
+
+#navbar ul li:nth-child(4).active ~ .indicator{
+    transform: translateX(calc(70px * 3));
+}
+
+#navbar ul li:nth-child(5).active ~ .indicator{
+    transform: translateX(calc(70px * 4));
+}
